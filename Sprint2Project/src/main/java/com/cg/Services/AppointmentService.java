@@ -2,8 +2,8 @@ package com.cg.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.cg.DAO.AppointmentRepository;
-import com.cg.Entities.Appointment;
+import com.cg.dao.AppointmentRepository;
+import com.cg.entities.Appointment;
 
 public class AppointmentService {
 	

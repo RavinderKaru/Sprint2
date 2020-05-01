@@ -9,14 +9,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.cg.DAO.AppointmentRepository;
-import com.cg.DAO.DiagnosticCenterRepository;
-import com.cg.DAO.PersonRepository;
-import com.cg.DAO.TestRepository;
-import com.cg.Entities.Appointment;
-import com.cg.Entities.DiagnosticCenter;
-import com.cg.Entities.Person;
-import com.cg.Entities.Test;
+import com.cg.dao.AppointmentRepository;
+import com.cg.dao.DiagnosticCenterRepository;
+import com.cg.dao.PersonRepository;
+import com.cg.dao.TestRepository;
+import com.cg.entities.Appointment;
+import com.cg.entities.DiagnosticCenter;
+import com.cg.entities.Person;
+import com.cg.entities.Test;
+
 
 @SpringBootApplication
 public class Sprint2ProjectApplication implements CommandLineRunner {
@@ -34,22 +35,19 @@ public class Sprint2ProjectApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("hi");
-		DiagnosticCenter diagnosticCenter=new DiagnosticCenter();
-	    diagnosticCenter.setCenterId("D11");
-	    diagnosticCenter.setCenterName("iii");
-	    //tests list
-	    Test test = new Test();
-	   test.setTestId("T111");
-	    test.setTestName("TEFT");
-	    Test test1 = new Test();
-	    test1.setTestId("T2222");
-	    test1.setTestName("FFF");
-	    diagnosticCenter.setListOfTests(Arrays.asList(test,test1));
-	    
-	    diagnosticCenterRepository.save(diagnosticCenter);
-	    System.out.println("ha");
-		// TODO Auto-generated method stub
+		/*
+		 * System.out.println("hi"); DiagnosticCenter diagnosticCenter=new
+		 * DiagnosticCenter(); diagnosticCenter.setCenterId("D11");
+		 * diagnosticCenter.setCenterName("iii"); //tests list Test test = new Test();
+		 * test.setTestId("T111"); test.setTestName("TEFT");
+		 * test.setCenter(diagnosticCenter); Test test1 = new Test();
+		 * test1.setTestId("T2222"); test1.setTestName("FFF");
+		 * test1.setCenter(diagnosticCenter);
+		 * diagnosticCenter.setListOfTests(Arrays.asList(test,test1));
+		 * 
+		 * diagnosticCenterRepository.save(diagnosticCenter); System.out.println("ha");
+		 */	// TODO Auto-generated method stub
+		
 		
 		
 		
@@ -79,5 +77,50 @@ public class Sprint2ProjectApplication implements CommandLineRunner {
 //		
 //		appointmentRepository.save(a1);
 		}
+	
+	
+	
+	/*SAIRA PROJECT TESTING
+	 * Person u=new Person();
+		u.setUserId(2);
+		u.setUserName("Ravi");
+		u.setContactNo(123654789);
+		u.setEmailId("abc@gmail.com");
+		u.setUserPassword("qwerty");
+		//u.setAppointment(a);
+		
+		Test t=new Test();
+		t.setTestId(2);
+		t.setTestName("bloodtest");
+		//t.setAppointmentList(Arrays.asList(a));
+		
+		DiagnosticCenter d=new DiagnosticCenter();
+		d.setCenterId(2);
+		d.setCenterName("ABC");
+		d.setContactNumber(147852369);
+		d.setAddress("Vijayawada");
+//		d.getListOfTests().add(t);
+//		d.getAppointmentList().add(a);
+		d.setListOfTests(Arrays.asList(t));
+		t.setCenter(d);
+		Appointment a=new Appointment();
+		a.setAppointmentId(2);
+		a.setApproved(true);
+		a.setDatetime(LocalDateTime.now());
+		a.setUser(u);
+		a.setCenter(d);
+		a.setTest(t);
+		
+		
+		d.setAppointmentList(Arrays.asList(a));
+		u.setAppointment(a);
+		 
+		
+		appd.save(a);
+		
+		
+		
+	 * 
+	 */
 
 }

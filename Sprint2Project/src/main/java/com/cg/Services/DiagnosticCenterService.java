@@ -2,8 +2,8 @@ package com.cg.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.cg.DAO.DiagnosticCenterRepository;
-import com.cg.Entities.DiagnosticCenter;
+import com.cg.dao.DiagnosticCenterRepository;
+import com.cg.entities.DiagnosticCenter;
 
 public class DiagnosticCenterService {
 	@Autowired
